@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music playlist interface</title>
+
+<style>
+    /* ---------------- GLOBAL ---------------- */
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: Poppins, sans-serif;
+        background: linear-gradient(160deg, #001f29, #001019, #00060c);
+	background-size: 400% 400%;
+        animation: bgMove 10s infinite alternate;
+        color: #fff;
+    }
+
+    @keyframes bgMove {
+        from { background-position: 0% 50%; }
+        to { background-position: 100% 50%; }
+    }
+
+    /* ---------------- CONTAINER ---------------- */
+    .player-box {
+        width: 380px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 25px;
+        border-radius: 20px;
+        backdrop-filter: blur(15px);
+        box-shadow: 0 0 30px rgba(0,0,0,0.4);
+        border: 1px solid rgba(255,255,255,0.15);
+        animation: popUp 0.8s ease-out;
+    }
+
+    @keyframes popUp {
+        from { transform: scale(0.8); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+
+    /* ---------------- ALBUM COVER ---------------- */
+    .cover {
+        width: 100%;
+        height: 260px;
+        border-radius: 20px;
+        background: url("C:/Users/punit/Downloads/cover.jpg") center/cover;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+        animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+        from { box-shadow: 0 0 15px #a855f73a; }
+        to   { box-shadow: 0 0 25px #a855f7; }
+    }
+
+    /* ---------------- TEXT ---------------- */
+    .song-info {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .song-info h2 {
+        margin: 0;
+        font-size: 22px;
+        letter-spacing: 1px;
+    }
+
+    .song-info p {
+        margin: 3px;
+        opacity: 0.7;
+    }
+
+    /* ---------------- CONTROLS ---------------- */
+    .controls {
+        margin: 25px auto;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .controls button {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(6px);
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .controls button:hover {
+        transform: scale(1.15);
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* ---------------- PLAYLIST ---------------- */
+    .playlist {
+        margin-top: 25px;
+    }
+
+    .track {
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        margin-bottom: 10px;
+        transition: 0.25s;
+        cursor: pointer;
+    }
+
+    .track:hover {
+        background: rgba(255,255,255,0.15);
+        transform: translateX(6px);
+    }
+
+    .track img {
+        width: 55px;
+        height: 55px;
+        border-radius: 10px;
+        margin-right: 12px;
+    }
+
+    .track-title {
+        font-size: 16px;
+        letter-spacing: 0.5px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="player-box">
+
+    <!-- Album Art -->
+    <div class="cover"></div>
+
+    <!-- Song Info -->
+    <div class="song-info">
+        <h2>Cozy Corners</h2>
+        <p>On Repeat</p>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button>⏮</button>
+        <button>▶</button>
+        <button>⏭</button>
+    </div>
+
+    <!-- Playlist -->
+    <div class="playlist">
+
+        <div class="track">
+            <img src="C:/Users/punit/Downloads/starboy.png">
+            <div class="track-title">Starboy - The Weekend, Draft Punk</div>
+        </div>
+
+        <div class="track">
+            <img src="C:/Users/punit/Downloads/blue.png">
+            <div class="track-title">Blue - yung kai</div>
+        </div>
+
+        <div class="track">
+            <img src="C:/Users/punit/Downloads/wanna be yours.png">
+            <div class="track-title">I Wanna Be Yours - Arctic Monkeys </div>
+        </div>
+
+        <div class="track">
+            <img src="C:/Users/punit/Downloads/sahiba.png">
+            <div class="track-title">Sahiba - Aditya Rikhari </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
